@@ -12,16 +12,12 @@
 <body>
     <?php
     session_start();
+    
     try {
-
         $_deney = new PDO("mysql:host=localhost;dbname=deney", "root", "");
     } catch (PDOException $e) {
         print $e->getMessage();
     }
-
-
-
-    
 
     if (empty($_SESSION["kullanici_adi"])) {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -73,110 +69,6 @@
     }
     ?>
 
-
-    <style>
-        body {
-            background: #231412;
-            color: #ffffff;
-            position: relative;
-            height: 100vh;
-            padding: 0%;
-            margin: 0%;
-        }
-
-        form {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #352320;
-            padding: 2rem;
-            width: 25rem;
-            border-radius: 1rem;
-            display: flex;
-            flex-direction: column;
-
-        }
-
-        input {
-            flex: 0 0 auto;
-            background: #D27E01;
-            color: #ffffff;
-            font-size: 1.2rem;
-            border-radius: .5rem;
-            padding: 1rem 1rem;
-            margin: .5rem 0;
-            border: none;
-            outline: none;
-        }
-
-        input::placeholder {
-            color: white;
-        }
-
-        button {
-            flex: 0 0 auto;
-            background: #F59A04;
-            color: #ffffff;
-            border: none;
-            border-radius: 2rem;
-            font-size: 2rem;
-            margin-top: 1rem;
-            padding: .5rem;
-        }
-
-        h1 {
-            font-size: 4rem;
-            line-height: 100%;
-            text-align: center;
-            margin: 0%;
-            padding-bottom: 1rem;
-        }
-
-        .modalbtn {
-            display: none;
-        }
-    </style>
-
-    <?php if (empty($_SESSION["kullanici_adi"])) {
-    ?>
-        <button type="button" class="modalbtn" data-bs-toggle="modal" data-bs-target="#bilgilendirme">
-        </button>
-
-        <div class="modal fade " id="bilgilendirme" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered ">
-                <div class="modal-content bg-dark">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Giriş Bilgisi</h5>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            Kullanıcı Adı : Mustafa
-                        </div>
-                        <div>
-                            Şifre : 12345
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Devam</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php
-    }
-    ?>
-
-
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function() {
-            $(".modalbtn").click();
-            $(".modalbtn").remove();
-        });
-    </script>
 </body>
 
 </html>
