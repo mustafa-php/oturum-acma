@@ -1,5 +1,2 @@
 # oturum-acma
-Php session ile oturum açma ve karşılama;
-.
-$instagra : mustafa.php ;
-$codepen : sosyalyazar ;
+Php $_SESSION ile oturum açma ve karşılama;
