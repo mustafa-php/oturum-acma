@@ -32,7 +32,7 @@
             if ($kullanici_varmi->rowCount() > 0) {
                 $kullanici_var = $kullanici_varmi->fetch();
                 $_SESSION["kullanici_adi"] = $kullanici_var["kullanici_adi"];
-                header("location:http://localhost/insta");
+                header("location:http://localhost");
             } else {
                 $hata = true;
             }
@@ -57,7 +57,7 @@
 
         if (isset($_GET["cikis"])) {
             session_destroy();
-            header("location:http://localhost/insta");
+            header("location:http://localhost");
         }
     ?>
 
